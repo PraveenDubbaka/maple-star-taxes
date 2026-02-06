@@ -8,8 +8,8 @@
     "dev": "nodemon server.js",
     "test": "echo \"No tests specified\" && exit 0",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d .",
-    "build": "echo 'Static site ready for deployment'"
+    "deploy": "gh-pages -d dist",
+    "build": "node build.js"
   },
   "keywords": [
     "tax",

@@ -3,6 +3,9 @@
 .env.local
 .env.production
 
+# Build output
+dist/
+
 # Node modules
 node_modules/
 package-lock.json

@@ -1,0 +1,15 @@
+# Files to EXCLUDE from gh-pages deployment
+.env
+.env.*
+server.js
+node_modules/
+package-lock.json
+*.log
+.DS_Store
+deploy.sh
+SECURITY.md
+SECURITY_SETUP.md
+GEMINI_SETUP.md
+DEPLOYMENT.md
+ENHANCEMENTS.md
+docs/
