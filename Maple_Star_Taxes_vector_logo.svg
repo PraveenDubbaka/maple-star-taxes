@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <style>
+      .ink { fill:#0b0b0b; }
+      .red { fill:#c1121f; }
+      .blue { fill:#003087; }
+      .gold { fill:#c9a227; }
+      .stroke { stroke:#0b0b0b; stroke-width:18; stroke-linejoin:round; stroke-linecap:round; }
+      .strokeThin { stroke:#0b0b0b; stroke-width:10; stroke-linejoin:round; stroke-linecap:round; }
+      text { font-family: "Georgia", "Times New Roman", serif; letter-spacing:2px; }
+    </style>
+    <!-- Five-point star path centered at (0,0), radius ~100 -->
+    <path id="star" d="M0,-110 L32,-35 L112,-35 L48,12 L72,92 L0,48 L-72,92 L-48,12 L-112,-35 L-32,-35 Z"/>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="1200" fill="#ffffff"/>
+
+  <!-- Flags (simple, flat, vector) -->
+  <!-- USA flag (left) -->
+  <g transform="translate(120,320)">
+    <rect x="0" y="0" width="420" height="220" fill="#ffffff" class="strokeThin"/>
+    <!-- stripes -->
+    <g>
+      <rect x="0" y="0" width="420" height="17" class="red"/>
+      <rect x="0" y="34" width="420" height="17" class="red"/>
+      <rect x="0" y="68" width="420" height="17" class="red"/>
+      <rect x="0" y="102" width="420" height="17" class="red"/>
+      <rect x="0" y="136" width="420" height="17" class="red"/>
+      <rect x="0" y="170" width="420" height="17" class="red"/>
+      <rect x="0" y="204" width="420" height="16" class="red"/>
+    </g>
+    <!-- canton -->
+    <rect x="0" y="0" width="175" height="119" class="blue"/>
+    <!-- simple stars -->
+    <g fill="#ffffff" transform="translate(22,18) scale(0.45)">
+      <use href="#star" x="0" y="0"/>
+      <use href="#star" x="120" y="0"/>
+      <use href="#star" x="60" y="70"/>
+      <use href="#star" x="0" y="140"/>
+      <use href="#star" x="120" y="140"/>
+    </g>
+    <rect x="0" y="0" width="420" height="220" fill="none" class="strokeThin"/>
+  </g>
+
+  <!-- Canada flag (right) -->
+  <g transform="translate(660,320)">
+    <rect x="0" y="0" width="420" height="220" fill="#ffffff" class="strokeThin"/>
+    <rect x="0" y="0" width="95" height="220" class="red"/>
+    <rect x="325" y="0" width="95" height="220" class="red"/>
+    <!-- simplified maple in center -->
+    <path class="red" d="M210,35
+      L228,70 L265,58 L252,92 L288,110 L250,120 L262,156
+      L228,140 L230,185 L210,160 L190,185 L192,140 L158,156
+      L170,120 L132,110 L168,92 L155,58 L192,70 Z"/>
+    <rect x="0" y="0" width="420" height="220" fill="none" class="strokeThin"/>
+  </g>
+
+  <!-- Central emblem: maple leaf + star -->
+  <g transform="translate(600,340)">
+    <!-- Maple leaf (vector, stylized woodcut) -->
+    <path class="red stroke" d="
+      M0,-235
+      L40,-170 L120,-190 L98,-120 L175,-95 L100,-70
+      L125,15 L55,-15 L70,120 L0,60 L-70,120 L-55,-15
+      L-125,15 L-100,-70 L-175,-95 L-98,-120 L-120,-190
+      L-40,-170 Z"/>
+    <!-- Star -->
+    <g transform="scale(1.05)">
+      <use href="#star" class="gold stroke"/>
+    </g>
+    <!-- Outline ring for punchy woodcut look -->
+    <path d="M0,-235
+      L40,-170 L120,-190 L98,-120 L175,-95 L100,-70
+      L125,15 L55,-15 L70,120 L0,60 L-70,120 L-55,-15
+      L-125,15 L-100,-70 L-175,-95 L-98,-120 L-120,-190
+      L-40,-170 Z" fill="none" class="stroke"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(600,770)" text-anchor="middle">
+    <text x="0" y="0" font-size="128" font-weight="800" class="ink">MAPLE STAR</text>
+    <g transform="translate(0,40)">
+      <line x1="-360" y1="70" x2="-140" y2="70" class="strokeThin"/>
+      <line x1="140" y1="70" x2="360" y2="70" class="strokeThin"/>
+      <text x="0" y="92" font-size="110" font-weight="900" class="red">TAXES</text>
+    </g>
+    <text x="0" y="190" font-size="34" class="ink">US &amp; CANADA</text>
+  </g>
+</svg>
