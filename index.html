@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maple Star Taxes - Premier Tax and Accounting Services in Canada and USA. Expert tax preparation, corporate accounting, and financial consulting.">
+    <meta name="keywords" content="tax services, accounting, Canada taxes, USA taxes, corporate accounting, personal tax preparation">
+    <title>Maple Star Taxes | Professional Tax Services in Canada & USA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <img src="Asset 1.svg" alt="Maple Star Taxes Logo" class="logo">
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#online-filing" class="nav-link">Online Filing</a>
+                <a href="#corporate-services" class="nav-link">Corporate Services</a>
+                <a href="#personal-tax" class="nav-link">Personal Tax</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
+                <button class="cta-button" onclick="openBooking()">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </button>
+                <button class="btn-account" onclick="window.open('https://mercurytaxes.taxdome.com/login', '_blank')">
+                    <i class="fas fa-user-circle"></i> My Account
+                </button>
+                <button class="btn-new-client" onclick="window.open('https://mercurytaxes.taxdome.com/signup', '_blank')">
+                    <i class="fas fa-user-plus"></i> New Client
+                </button>
+            </div>
+            
+            <div class="mobile-menu-icon" id="mobileMenuIcon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="animated-gradient"></div>
+            <div class="particle-field" id="particles"></div>
+            <div id="floatingIcons"></div>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Expert</span>
+                    <br><span id="typewriterText" class="typewriter-text"></span>
+                </h1>
+                <p class="hero-subtitle">
+                    Seamlessly serving <span class="highlight">Canada</span> & <span class="highlight">USA</span> with AI-powered tax optimization and expert financial consulting
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10000">0</div>
+                        <div class="stat-label">Clients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="openBooking()">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </button>
+                    <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-compass"></i> Explore Services
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <dotlottie-wc
+                    src="https://lottie.host/3d7f1e56-1534-4b2c-ab2c-d2e396c97087/FYg0OW1CPF.lottie"
+                    style="width: 500px; height: 500px;"
+                    autoplay
+                    loop
+                ></dotlottie-wc>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Country Selector Section -->
+    <section class="country-selector" id="countries">
+        <div class="container">
+            <h2 class="section-title">Choose Your Region</h2>
+            <p class="section-subtitle">Specialized services tailored to your country's tax requirements</p>
+            
+            <div class="country-cards">
+                <div class="country-card canada-card" data-country="canada">
+                    <div class="country-icon">
+                        <span class="flag-icon">🇨🇦</span>
+                    </div>
+                    <h3>Canada</h3>
+                    <p>CRA compliant tax services</p>
+                    <ul class="country-features">
+                        <li><i class="fas fa-check"></i> Personal & Corporate Tax</li>
+                        <li><i class="fas fa-check"></i> HST/GST Filing</li>
+                        <li><i class="fas fa-check"></i> RRSP Optimization</li>
+                        <li><i class="fas fa-check"></i> Estate Planning</li>
+                    </ul>
+                    <button class="country-btn" onclick="selectCountry('canada')">
+                        Select Canada <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="country-card usa-card" data-country="usa">
+                    <div class="country-icon">
+                        <span class="flag-icon">🇺🇸</span>
+                    </div>
+                    <h3>United States</h3>
+                    <p>IRS compliant tax services</p>
+                    <ul class="country-features">
+                        <li><i class="fas fa-check"></i> Federal & State Tax</li>
+                        <li><i class="fas fa-check"></i> 1040/1120 Filing</li>
+                        <li><i class="fas fa-check"></i> 401(k) Strategies</li>
+                        <li><i class="fas fa-check"></i> Multi-State Planning</li>
+                    </ul>
+                    <button class="country-btn" onclick="selectCountry('usa')">
+                        Select USA <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">Comprehensive tax and accounting solutions powered by technology and expertise</p>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Personal Tax Preparation</h3>
+                    <p>Maximize your refund with our expert tax preparation. We handle self-employed, foreign students, seniors, and new immigrants.</p>
+                    <ul class="service-features">
+                        <li>Maximum Deductions</li>
+                        <li>Multi-Country Expertise</li>
+                        <li>Fast E-Filing</li>
+                    </ul>
+                    <button class="service-btn" onclick="openBooking('personal-tax')">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Accounting</h3>
+                    <p>Turnkey solutions for your business finances including payroll, tax planning, and salary/dividend distribution optimization.</p>
+                    <ul class="service-features">
+                        <li>Payroll Management</li>
+                        <li>Tax Minimization</li>
+                        <li>Financial Planning</li>
+                    </ul>
+                    <button class="service-btn" onclick="openBooking('corporate')">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Small Business Services</h3>
+                    <p>Comprehensive accounting for small to medium businesses. Accurate financial records and timely tax payments.</p>
+                    <ul class="service-features">
+                        <li>Bookkeeping</li>
+                        <li>Financial Statements</li>
+                        <li>Compliance Management</li>
+                    </ul>
+                    <button class="service-btn" onclick="openBooking('small-business')">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Business Tax Filing</h3>
+                    <p>Accurate and timely business tax filing. Avoid penalties and keep the revenue agencies satisfied.</p>
+                    <ul class="service-features">
+                        <li>On-Time Filing</li>
+                        <li>Penalty Prevention</li>
+                        <li>Audit Support</li>
+                    </ul>
+                    <button class="service-btn" onclick="openBooking('business-tax')">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Estate Tax Returns</h3>
+                    <p>Navigate the difficult time with expert estate tax services. Protect the estate from government claims.</p>
+                    <ul class="service-features">
+                        <li>Estate Planning</li>
+                        <li>Final Returns</li>
+                        <li>Trust Management</li>
+                    </ul>
+                    <button class="service-btn" onclick="openBooking('estate')">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Audit Support</h3>
+                    <p>Professional guidance through audits, every step of the way. We ensure compliance and peace of mind.</p>
+                    <ul class="service-features">
+                        <li>Full Audit Support</li>
+                        <li>Documentation Review</li>
+                        <li>Expert Representation</li>
+                    </ul>
+                    <button class="service-btn" onclick="openBooking('audit')">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TaxBot Slide-in Panel -->
+    <div class="taxbot-slider" id="taxbotSlider">
+        <div class="slider-header">
+            <div class="slider-title">
+                <i class="fas fa-robot"></i>
+                <h3>TaxBot Assistant</h3>
+            </div>
+            <button class="close-slider" onclick="closeTaxBot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="slider-content">
+            <!-- Chat Interface takes full space -->
+            <div class="chat-interface">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+                        <div class="message-content">
+                            <p><strong>Welcome to TaxBot!</strong></p>
+                            <p>Ask me about tax deductions, credits, filing deadlines, business expenses, and more.</p>
+                            <p class="disclaimer-inline"><i class="fas fa-info-circle"></i> <span id="questionsAnswered">76,000+</span> questions answered. Always verify with a professional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <!-- Quick Question Badges -->
+                    <div class="quick-prompts">
+                        <button class="prompt-badge" onclick="askSampleQuestion(this)">
+                            <i class="fas fa-tooth"></i> Canadian Dental Care Plan?
+                        </button>
+                        <button class="prompt-badge" onclick="askSampleQuestion(this)">
+                            <i class="fas fa-briefcase"></i> Sole proprietor deductions?
+                        </button>
+                        <button class="prompt-badge" onclick="askSampleQuestion(this)">
+                            <i class="fas fa-home"></i> Home office expenses?
+                        </button>
+                        <button class="prompt-badge" onclick="askSampleQuestion(this)">
+                            <i class="fas fa-file-invoice"></i> Tax filing deadline?
+                        </button>
+                    </div>
+                    
+                    <form id="chatForm" onsubmit="sendMessage(event)">
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="chatInput" 
+                                placeholder="Ask a tax question..." 
+                                autocomplete="off"
+                                required
+                            />
+                            <button type="submit" class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <button class="reset-btn" onclick="resetConversation()">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Online Filing Section -->
+    <section id="online-filing" class="online-filing-section">
+        <div class="container">
+            <h2 class="section-title">Easy Online Tax Filing</h2>
+            <p class="section-subtitle">File your taxes from anywhere with our secure digital platform</p>
+            
+            <div class="filing-content">
+                <div class="filing-visual">
+                    <i class="fas fa-mobile-alt filing-icon"></i>
+                    <div class="filing-features">
+                        <div class="feature-badge">
+                            <i class="fas fa-lock"></i> Secure & Encrypted
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-clock"></i> 24/7 Access
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-check-circle"></i> Fast Processing
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filing-info">
+                    <h3>File Your Taxes in 3 Simple Steps</h3>
+                    
+                    <div class="filing-steps">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Upload Documents</h4>
+                                <p>Securely upload your T4s, receipts, and other tax documents through our encrypted portal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Expert Review</h4>
+                                <p>Our certified tax professionals review your documents and prepare your return</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>E-File & Get Refund</h4>
+                                <p>We electronically file your return and you receive your refund in as little as 8 business days</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filing-benefits">
+                        <h4>Why Choose Online Filing?</h4>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> No in-person appointments needed</li>
+                            <li><i class="fas fa-check"></i> Maximum refund guarantee</li>
+                            <li><i class="fas fa-check"></i> Direct deposit available</li>
+                            <li><i class="fas fa-check"></i> Full audit protection included</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="cta-button" onclick="window.open('https://mercurytaxes.taxdome.com/signup', '_blank')">
+                        <i class="fas fa-paper-plane"></i> Start Online Filing
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Services Section -->
+    <section id="corporate-services" class="corporate-section">
+        <div class="container">
+            <h2 class="section-title">Corporate Tax & Accounting Services</h2>
+            <p class="section-subtitle">Comprehensive financial solutions for your business success</p>
+            
+            <div class="corporate-intro">
+                <div class="corporate-intro-content">
+                    <h3>What Our Business Accountant Can Do</h3>
+                    <p>Our corporate services are handled by a Chartered Accountant. We pride ourselves on being precise and effective to ensure your corporate accounting services are handled without any errors. We work with over 10,000 clients annually, providing expert business accounting solutions.</p>
+                </div>
+                <div class="corporate-intro-highlight">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Stop Overpaying For Taxes</h4>
+                    <p>There are a lot of deductibles. Make sure you are taking advantage of all your tax deductions (or "write-offs") to minimize your capital and income tax.</p>
+                </div>
+            </div>
+            
+            <div class="corporate-grid">
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Corporate Tax Planning</h3>
+                    <p>We will go through an extensive strategic planning to see the best way to structure your business to minimize tax liabilities.</p>
+                    <ul class="corporate-features">
+                        <li>Strategic Business Structure</li>
+                        <li>Tax Liability Minimization</li>
+                        <li>Optimal Year-End Selection</li>
+                        <li>Incorporation Planning</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Payroll Setup</h3>
+                    <p>Do you have employees? Did you know you have to remit their deductions frequently or you will get charged with late fees? Don't let this endanger your business.</p>
+                    <ul class="corporate-features">
+                        <li>Payroll Account Setup</li>
+                        <li>Employee Deductions Management</li>
+                        <li>Remittance Scheduling</li>
+                        <li>Late Fee Prevention</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Income and Capital Tax Minimization</h3>
+                    <p>Stop overpaying in taxes. There are a lot of deductibles. Make sure you are taking advantage of all your tax deductible to minimize your capital and income tax.</p>
+                    <ul class="corporate-features">
+                        <li>Tax Deduction Optimization</li>
+                        <li>Capital Tax Reduction</li>
+                        <li>Write-Off Maximization</li>
+                        <li>Income Splitting Strategies</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Salary Dividend Distribution</h3>
+                    <p>Optimize your compensation strategy by balancing salary and dividend payments for maximum tax efficiency and personal benefits.</p>
+                    <ul class="corporate-features">
+                        <li>Salary vs Dividend Analysis</li>
+                        <li>Tax-Efficient Compensation</li>
+                        <li>CPP Optimization</li>
+                        <li>Personal Tax Planning</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>GST/HST Return Filing</h3>
+                    <p>GST/HST Return filing has to be filed periodically. Not filing on time can lead to late penalties. See how we can help set up a system to ensure timely filing.</p>
+                    <ul class="corporate-features">
+                        <li>Periodic Return Filing</li>
+                        <li>Input Tax Credit Optimization</li>
+                        <li>Late Penalty Prevention</li>
+                        <li>Quick Method Calculations</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Canada/US Cross Border Filing</h3>
+                    <p>Our Chartered Accountant is designated to file taxes in both Canada and the United States, helping your business do taxes in both countries.</p>
+                    <ul class="corporate-features">
+                        <li>Dual-Country Tax Filing</li>
+                        <li>CRA & IRS Compliance</li>
+                        <li>Foreign Tax Credits</li>
+                        <li>Treaty Benefits</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Audits and Reviews</h3>
+                    <p>Professional audit support and financial reviews to ensure accuracy and compliance with CRA requirements.</p>
+                    <ul class="corporate-features">
+                        <li>Financial Statement Audits</li>
+                        <li>CRA Audit Support</li>
+                        <li>Compliance Reviews</li>
+                        <li>Documentation Preparation</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Tax Filing</h3>
+                    <p>Expert preparation and filing of T2 corporate tax returns for small to medium businesses. We ensure compliance with CRA and maximize your business deductions.</p>
+                    <ul class="corporate-features">
+                        <li>T2 Corporate Returns</li>
+                        <li>Small Business Deduction</li>
+                        <li>Scientific Research Credits</li>
+                        <li>Investment Tax Credits</li>
+                    </ul>
+                </div>
+                
+                <div class="corporate-card">
+                    <div class="corporate-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Bookkeeping & Accounting</h3>
+                    <p>Professional bookkeeping services to keep your financial records organized and up-to-date throughout the year.</p>
+                    <ul class="corporate-features">
+                        <li>Monthly Bookkeeping</li>
+                        <li>Financial Statements</li>
+                        <li>Bank Reconciliation</li>
+                        <li>Accounts Payable/Receivable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="new-corporation-section">
+                <div class="new-corp-content">
+                    <div class="new-corp-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <div class="new-corp-text">
+                        <h3>Looking to Open a New Corporation?</h3>
+                        <p>Your first consultation will be absolutely free. Our business accountant will discuss what is required to take it from an idea to a business. We will find when it is advantageous to set a year-end and how often you should be filing. Do not get left behind and have the Canadian Revenue Agency (CRA) after your inaccuracies.</p>
+                        <ul class="new-corp-benefits">
+                            <li><i class="fas fa-check-circle"></i> Free First Consultation</li>
+                            <li><i class="fas fa-check-circle"></i> Year-End Strategy Planning</li>
+                            <li><i class="fas fa-check-circle"></i> Filing Schedule Guidance</li>
+                            <li><i class="fas fa-check-circle"></i> CRA Compliance Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="corporate-cta">
+                <h3>Ready to Optimize Your Business Taxes?</h3>
+                <p>Schedule a consultation with our corporate tax specialists today</p>
+                <button class="cta-button" onclick="openBooking()">
+                    <i class="fas fa-calendar-check"></i> Book Corporate Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Tax Section -->
+    <section id="personal-tax" class="personal-tax-section">
+        <div class="container">
+            <h2 class="section-title">Personal Tax Preparation Services</h2>
+            <p class="section-subtitle">Maximize your refund with expert personal tax services</p>
+            
+            <div class="personal-tax-intro">
+                <p>Whether you're self-employed, a foreign student, senior, or new immigrant, our experienced tax professionals ensure you receive every deduction and credit you're entitled to. We specialize in complex personal tax situations and guarantee maximum refunds.</p>
+            </div>
+            
+            <div class="tax-categories">
+                <div class="tax-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Self-Employed & Contractors</h3>
+                    </div>
+                    <p>Specialized tax preparation for self-employed individuals, freelancers, and independent contractors.</p>
+                    <div class="category-details">
+                        <h4>Available Deductions:</h4>
+                        <ul>
+                            <li><i class="fas fa-home"></i> Home office expenses (rent, utilities, insurance)</li>
+                            <li><i class="fas fa-car"></i> Vehicle expenses and mileage</li>
+                            <li><i class="fas fa-laptop"></i> Equipment and supplies</li>
+                            <li><i class="fas fa-phone"></i> Business phone and internet</li>
+                            <li><i class="fas fa-briefcase"></i> Professional development and training</li>
+                            <li><i class="fas fa-utensils"></i> Meals and entertainment (50%)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tax-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>International Students</h3>
+                    </div>
+                    <p>Expert tax filing for foreign students studying in Canada or USA with special attention to treaty benefits.</p>
+                    <div class="category-details">
+                        <h4>Student Benefits:</h4>
+                        <ul>
+                            <li><i class="fas fa-book"></i> Tuition and education credits</li>
+                            <li><i class="fas fa-home"></i> Rent credits (provincial)</li>
+                            <li><i class="fas fa-bus"></i> Public transit credits</li>
+                            <li><i class="fas fa-globe"></i> Tax treaty exemptions</li>
+                            <li><i class="fas fa-money-bill-wave"></i> Scholarship and grant reporting</li>
+                            <li><i class="fas fa-passport"></i> First-time filer assistance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tax-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-user-clock"></i>
+                        <h3>Seniors & Retirees</h3>
+                    </div>
+                    <p>Comprehensive tax services for seniors including pension income splitting and age-related benefits.</p>
+                    <div class="category-details">
+                        <h4>Senior Benefits:</h4>
+                        <ul>
+                            <li><i class="fas fa-coins"></i> Pension income splitting</li>
+                            <li><i class="fas fa-heartbeat"></i> Medical expense claims</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> Age amount credit</li>
+                            <li><i class="fas fa-wheelchair"></i> Disability tax credit</li>
+                            <li><i class="fas fa-pills"></i> Prescription medication deductions</li>
+                            <li><i class="fas fa-home-heart"></i> Home accessibility credits</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tax-category-card">
+                    <div class="category-header">
+                        <i class="fas fa-plane-arrival"></i>
+                        <h3>New Immigrants</h3>
+                    </div>
+                    <p>Specialized support for newcomers to Canada or USA navigating their first tax filing.</p>
+                    <div class="category-details">
+                        <h4>Newcomer Services:</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar-day"></i> Residency determination</li>
+                            <li><i class="fas fa-globe-americas"></i> Foreign income reporting</li>
+                            <li><i class="fas fa-piggy-bank"></i> Foreign asset disclosure</li>
+                            <li><i class="fas fa-child"></i> Canada Child Benefit applications</li>
+                            <li><i class="fas fa-credit-card"></i> GST/HST credit applications</li>
+                            <li><i class="fas fa-file-alt"></i> First return preparation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="deduction-maximizer">
+                <h3><i class="fas fa-dollar-sign"></i> Common Personal Tax Deductions</h3>
+                <div class="deduction-grid">
+                    <div class="deduction-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Employment Expenses</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-car-side"></i>
+                        <span>Vehicle & Travel</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-home"></i>
+                        <span>Moving Expenses</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-child"></i>
+                        <span>Childcare Costs</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Medical Expenses</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>Charitable Donations</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-university"></i>
+                        <span>Interest on Student Loans</span>
+                    </div>
+                    <div class="deduction-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Investment Expenses</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="personal-tax-guarantee">
+                <div class="guarantee-content">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>Maximum Refund Guarantee</h3>
+                        <p>We guarantee to find every deduction and credit you're entitled to, or we'll refund our fee</p>
+                    </div>
+                    <button class="cta-button" onclick="openBooking()">
+                        <i class="fas fa-user-plus"></i> Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cross-Border Tax Services -->
+    <section class="cross-border">
+        <div class="container">
+            <h2 class="section-title">Cross-Border Tax Expertise</h2>
+            <p class="section-subtitle">Seamless tax solutions for individuals and businesses operating in both Canada and USA</p>
+            
+            <div class="cross-border-content">
+                <div class="cross-border-visual">
+                    <div class="map-container">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                </div>
+                
+                <div class="cross-border-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Dual-Country Filing</h3>
+                            <p>Expert handling of cross-border tax obligations with CRA and IRS compliance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Tax Treaty Optimization</h3>
+                            <p>Leverage Canada-USA tax treaties to minimize your tax burden legally</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Currency & FBAR Reporting</h3>
+                            <p>Comprehensive foreign account and currency exchange reporting services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-card">
+                        <div class="ca-badge">
+                            <i class="fas fa-award"></i>
+                            <span>Chartered Accountant</span>
+                        </div>
+                        <p class="signature-text">Ganesh, CA</p>
+                        <p class="role-text">CEO & Founder</p>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h2 class="section-title">About Maple Star Taxes</h2>
+                    <p>
+                        Formerly Mercury Tax, we've evolved into <strong>Maple Star Taxes</strong> to better serve our expanding client base across Canada and the United States. With over 10,000 clients served annually, we bring unparalleled expertise in personal and corporate tax preparation.
+                    </p>
+                    <p>
+                        Our firm is overseen by <strong>Ganesh, Chartered Accountant</strong>, whose growth vision and professional designations have established us as a leading tax and accounting firm in North America.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certified Professionals</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <span>10,000+ Annual Clients</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Canada & USA Coverage</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary" onclick="openBooking()">
+                        <i class="fas fa-handshake"></i> Partner With Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real experiences from real people across Canada and USA</p>
+            
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "They provide exceptional service. I am new to corporate tax and have limited knowledge about taxing. Ganesh explained all the pros and cons. He has tremendous knowledge. Thanks to Maple Star Taxes!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Raj Bharat</h4>
+                            <p>Corporate Accounting Client - Canada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I am an International Student and went there with my friend. They provided efficient service. They addressed all our questions very patiently. Sravan helped file my taxes and he was very professional."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Payal Raut</h4>
+                            <p>International Student - Canada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Excellent cross-border tax service! They helped me navigate both Canadian and US tax requirements seamlessly. Their expertise saved me thousands in taxes."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Cross-Border Professional - USA/Canada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="slideTestimonials(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next" onclick="slideTestimonials(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Services -->
+    <section class="online-services">
+        <div class="container">
+            <div class="online-content">
+                <div class="online-text">
+                    <h2>Complete Online Tax Filing</h2>
+                    <p>
+                        File your taxes from anywhere, anytime. Our secure online portal makes tax filing convenient and efficient.
+                    </p>
+                    
+                    <div class="online-features">
+                        <div class="online-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Mobile Friendly</h4>
+                                <p>Access from any device</p>
+                            </div>
+                        </div>
+                        <div class="online-feature">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <h4>Bank-Level Security</h4>
+                                <p>256-bit encryption</p>
+                            </div>
+                        </div>
+                        <div class="online-feature">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <div>
+                                <h4>Easy Document Upload</h4>
+                                <p>Drag and drop files</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary" onclick="window.open('https://mercurytaxes.taxdome.com/login', '_blank')">
+                        <i class="fas fa-sign-in-alt"></i> Access Client Portal
+                    </button>
+                </div>
+                
+                <div class="online-visual">
+                    <div class="device-mockup">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to optimize your taxes? Reach out to our expert team</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Head Office - Canada</h3>
+                        <p>204-2401 Eglinton Ave E<br>Toronto, ON M1K 2N8</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:4167503600">416-750-3600</a></p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@maplestartaxes.com">info@maplestartaxes.com</a></p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Mercury-Tax-553487315100197/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="http://instagram.com/mercurytaxes" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mercury-taxes/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="Phone Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <i class="fas fa-briefcase"></i>
+                            <select id="service" required>
+                                <option value="">Select Service</option>
+                                <option value="personal">Personal Tax</option>
+                                <option value="corporate">Corporate Accounting</option>
+                                <option value="small-business">Small Business</option>
+                                <option value="estate">Estate Tax</option>
+                                <option value="audit">Audit Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <i class="fas fa-comment"></i>
+                            <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary full-width">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions Bar -->
+    <div class="quick-actions">
+        <button class="quick-action-btn" onclick="openBooking()" title="Book Appointment">
+            <i class="fas fa-calendar-check"></i>
+        </button>
+        <button class="quick-action-btn" onclick="openAIChat()" title="AI Assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        <button class="quick-action-btn" onclick="window.location.href='tel:4167503600'" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </button>
+        <button class="quick-action-btn" onclick="scrollToTop()" title="Back to Top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2><i class="fas fa-envelope"></i> Stay Updated with Tax Tips</h2>
+                    <p>Subscribe to our newsletter for the latest tax news, deadlines, and money-saving tips!</p>
+                </div>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email address" required id="newsletterEmail">
+                    <button type="submit" class="btn-subscribe">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+                <p class="newsletter-privacy">Don't worry, we don't spam. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Portal Modal -->
+    <div class="modal" id="clientPortalModal">
+        <div class="modal-content portal-modal">
+            <button class="modal-close" onclick="closeClientPortal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="portal-header">
+                <i class="fas fa-user-shield"></i>
+                <h2>Client Portal Access</h2>
+                <p>Secure access to your tax documents and account</p>
+            </div>
+            <div class="portal-options">
+                <a href="https://mercurytaxes.cchifirm.ca/clientportal/" target="_blank" class="portal-option">
+                    <div class="portal-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3>My Accounting Profile</h3>
+                    <p>Access your documents, tax returns, and financial reports</p>
+                    <span class="portal-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://meetme.so/MERCURYTAX" target="_blank" class="portal-option">
+                    <div class="portal-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Book Appointment</h3>
+                    <p>Schedule a consultation with our tax experts</p>
+                    <span class="portal-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://apps.netcheckin.com/static/mercurytaxes/index.html" target="_blank" class="portal-option">
+                    <div class="portal-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Check-In Online</h3>
+                    <p>Skip the line with our digital check-in system</p>
+                    <span class="portal-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="portal-help">
+                <p><i class="fas fa-question-circle"></i> Need help? Call us at <a href="tel:416-750-3600">416-750-3600</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="maple_star_taxes_logo.svg" alt="Maple Star Taxes Logo" class="footer-logo">
+                    <p>Helping over 10,000 clients annually with expert tax preparation and corporate accounting services across Canada and USA.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/Mercury-Tax-553487315100197/" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="http://instagram.com/mercurytaxes" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mercury-taxes/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#" onclick="openBooking('personal-tax')">Personal Tax</a></li>
+                        <li><a href="#" onclick="openBooking('corporate')">Corporate Accounting</a></li>
+                        <li><a href="#" onclick="openBooking('small-business')">Small Business</a></li>
+                        <li><a href="#" onclick="openBooking('estate')">Estate Tax</a></li>
+                        <li><a href="#" onclick="openBooking('audit')">Audit Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Client Resources</h3>
+                    <ul>
+                        <li><a href="#" onclick="openClientPortal(); return false;">Client Portal Login</a></li>
+                        <li><a href="https://meetme.so/MERCURYTAX" target="_blank">Book Appointment</a></li>
+                        <li><a href="https://apps.netcheckin.com/static/mercurytaxes/index.html" target="_blank">Online Check-In</a></li>
+                        <li><a href="#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#service-policy">Service Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maple Star Taxes. All rights reserved. Formerly Mercury Tax.</p>
+                <p>Serving Canada & USA with Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
