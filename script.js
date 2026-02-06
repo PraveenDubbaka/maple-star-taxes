@@ -20,7 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLoadingStates();
     enhanceAccessibility();
     initializeLazyLoading();
+    checkGitHubPagesMode();
 });
+
+// Check if running on GitHub Pages and show demo badge
+function checkGitHubPagesMode() {
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    if (isGitHubPages) {
+        const demoBadge = document.getElementById('demoModeBadge');
+        if (demoBadge) {
+            demoBadge.style.display = 'inline';
+        }
+    }
+}
 
 // ========== TYPEWRITER EFFECT ==========
 function initializeTypewriter() {
@@ -886,6 +898,25 @@ async function getAIResponse(question) {
         sendBtn.innerHTML = '<div class="spinner"></div>';
         sendBtn.disabled = true;
         
+        // Detect if running on GitHub Pages (static hosting)
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        
+        // If on GitHub Pages, show informative message and use rule-based responses
+        if (isGitHubPages) {
+            sendBtn.innerHTML = originalBtnContent;
+            sendBtn.disabled = false;
+            
+            // First time on GitHub Pages, show deployment message
+            if (!window.taxBotGitHubNoticeShown) {
+                window.taxBotGitHubNoticeShown = true;
+                setTimeout(() => {
+                    showNotification('TaxBot is using offline mode on this demo. For full AI features, visit the production site.', 'info');
+                }, 500);
+            }
+            
+            return getRuleBasedResponse(question);
+        }
+        
         // Call secure backend API (API key is hidden on server)
         const response = await fetch('http://localhost:3001/api/chat', {
             method: 'POST',
@@ -919,6 +950,15 @@ async function getAIResponse(question) {
     } catch (error) {
         // If backend is not running, use rule-based responses
         console.log('Backend not available, using rule-based responses');
+        
+        // Restore button state
+        const sendBtn = document.getElementById('sendBtn');
+        if (sendBtn) {
+            const originalBtnContent = '<i class="fas fa-paper-plane"></i>';
+            sendBtn.innerHTML = originalBtnContent;
+            sendBtn.disabled = false;
+        }
+        
         return getRuleBasedResponse(question);
     }
 }
