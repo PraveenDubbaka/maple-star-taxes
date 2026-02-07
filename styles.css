@@ -1434,8 +1434,15 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 60px;
+    line-height: 1;
+}
+
+.service-icon i {
+    display: block;
 }
 
 .service-card h3 {
