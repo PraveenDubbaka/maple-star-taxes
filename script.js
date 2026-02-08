@@ -5,6 +5,7 @@
 
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', function() {
+    initializeTheme();
     initializeNavbar();
     initializeTypewriter();
     initializeFloatingIcons();
@@ -22,6 +23,76 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLazyLoading();
     checkGitHubPagesMode();
 });
+
+// ========== THEME SWITCHER ==========
+function initializeTheme() {
+    // Check for saved theme preference or default to light theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    }
+    
+    // Theme toggle button
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+}
+
+function toggleTheme() {
+    const body = document.body;
+    const isLight = body.classList.contains('light-theme');
+    
+    // Add smooth transition
+    body.style.transition = 'background-color 0.4s ease, color 0.4s ease';
+    
+    if (isLight) {
+        body.classList.remove('light-theme');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        body.classList.add('light-theme');
+        localStorage.setItem('theme', 'light');
+    }
+    
+    // Trigger animations
+    createThemeTransitionEffect();
+}
+
+function createThemeTransitionEffect() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+    
+    // Create ripple effect
+    const ripple = document.createElement('div');
+    ripple.style.cssText = `
+        position: fixed;
+        top: ${toggle.getBoundingClientRect().top + toggle.offsetHeight / 2}px;
+        left: ${toggle.getBoundingClientRect().left + toggle.offsetWidth / 2}px;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.3;
+        transform: translate(-50%, -50%);
+        transition: all 0.6s ease-out;
+    `;
+    
+    document.body.appendChild(ripple);
+    
+    // Trigger animation
+    setTimeout(() => {
+        ripple.style.width = '3000px';
+        ripple.style.height = '3000px';
+        ripple.style.opacity = '0';
+    }, 10);
+    
+    // Remove element
+    setTimeout(() => {
+        ripple.remove();
+    }, 700);
+}
 
 // Check if running on GitHub Pages and show demo badge
 function checkGitHubPagesMode() {
