@@ -9,6 +9,7 @@ const FILES_TO_COPY = [
     'index.html',
     'styles.css',
     'script.js',
+    'MST_Logo.svg',
     'Asset 1.svg',
     'maple_star_taxes_logo.svg',
     'maple_star_taxes_logo_option1.png',
