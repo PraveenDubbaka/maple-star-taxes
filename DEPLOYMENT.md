@@ -3,16 +3,19 @@
 This website is deployed to GitHub Pages for client review.
 
 ## Live Demo
+
 - **GitHub Pages URL**: `https://[your-username].github.io/maple-star-taxes/`
 
 ## Deployment Instructions
 
 ### Initial Setup
+
 1. Create a new repository on GitHub named `maple-star-taxes`
 2. Push this code to the repository
 3. Enable GitHub Pages in repository settings
 
 ### Deploy Updates
+
 ```bash
 npm run deploy
 ```
@@ -20,9 +23,11 @@ npm run deploy
 ## Important Notes
 
 ### AI Chat Feature
+
 ⚠️ **Note**: The AI Tax Assistant chatbot requires a backend server and will NOT work on GitHub Pages (which only hosts static files). The chatbot will be disabled in the deployed version.
 
 To enable the AI chatbot:
+
 1. Deploy the backend server (server.js) to a platform like:
    - Heroku
    - Vercel
@@ -32,6 +37,7 @@ To enable the AI chatbot:
 2. Update the API endpoint in script.js
 
 ### Static Features Available
+
 The following features work perfectly on GitHub Pages:
 ✅ All page sections and navigation
 ✅ Country selection (Canada/USA)
@@ -41,11 +47,13 @@ The following features work perfectly on GitHub Pages:
 ✅ TaxDome redirects (login/signup)
 
 ### Backend Features (Not Available on GitHub Pages)
+
 ❌ AI Tax Assistant chatbot
 ❌ Contact form submission processing
 ❌ API endpoints
 
 ## Viewing Locally
+
 ```bash
 # Install dependencies
 npm install
@@ -57,6 +65,7 @@ npm start
 ```
 
 ## Repository Structure
+
 ```
 maple-star-taxes/
 ├── index.html          # Main website
@@ -69,4 +78,5 @@ maple-star-taxes/
 ```
 
 ## Contact
+
 For questions about the website, contact Maple Star Taxes.

@@ -269,6 +269,8 @@ Be thorough, cite sources, and provide actionable information. You are a trusted
         clearTimeout(timeout);
 
         if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`[${req.requestId}] Gemini API Error ${response.status}:`, errorText);
             throw new Error(`Gemini API returned ${response.status}`);
         }
 

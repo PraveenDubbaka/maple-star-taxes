@@ -11,6 +11,7 @@
 ## 🌟 Key Features
 
 ### ✨ Design & UX
+
 - **Futuristic Design**: Gradient-rich, modern interface with smooth animations
 - **Responsive Layout**: Fully optimized for desktop, tablet, and mobile devices
 - **Dark Theme**: Professional dark mode with vibrant accent colors
@@ -18,11 +19,13 @@
 - **Accessibility**: Keyboard navigation and screen reader friendly
 
 ### 🌍 Dual-Country Support
+
 - **Canada Services**: CRA-compliant tax services, HST/GST filing, RRSP optimization
 - **USA Services**: IRS-compliant tax services, Federal/State filing, 401(k) strategies
 - **Cross-Border Expertise**: Specialized services for clients with operations in both countries
 
 ### 🚀 Advanced Features
+
 - **AI Tax Assistant** (Coming Soon): Interactive chatbot for preliminary tax queries
 - **Online Tax Filing**: Secure client portal access
 - **Appointment Booking**: Integrated booking system
@@ -31,6 +34,7 @@
 - **Quick Actions**: Floating action buttons for instant access to key functions
 
 ### 📱 Services Offered
+
 1. **Personal Tax Preparation**: Maximum refund optimization
 2. **Corporate Accounting**: Full-service business financial management
 3. **Small Business Services**: Comprehensive accounting for SMBs
@@ -82,16 +86,19 @@ Maple Star Taxes/
 ### Color Palette
 
 #### Primary Colors
+
 - **Primary Gradient**: `#667eea → #764ba2` (Purple gradient)
 - **Secondary Gradient**: `#f093fb → #f5576c` (Pink gradient)
 - **Accent Gradient**: `#4facfe → #00f2fe` (Blue gradient)
 - **Success Gradient**: `#43e97b → #38f9d7` (Green gradient)
 
 #### Country-Specific Colors
+
 - **Canada**: Red and white theme with maple leaf accent
 - **USA**: Blue, red, and white patriotic theme
 
 #### Neutral Colors
+
 - **Background Dark**: `#0a0e27`
 - **Background Darker**: `#050814`
 - **Card Background**: `rgba(15, 23, 42, 0.7)` with backdrop blur
@@ -117,6 +124,7 @@ Maple Star Taxes/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - Local web server (optional, for development)
 
@@ -127,13 +135,14 @@ Maple Star Taxes/
 2. **Open the website**:
    - Simply open `index.html` in your web browser, or
    - Use a local development server (recommended):
+
      ```bash
      # Using Python 3
      python -m http.server 8000
-     
+
      # Using Node.js with http-server
      npx http-server
-     
+
      # Using PHP
      php -S localhost:8000
      ```
@@ -148,15 +157,19 @@ Maple Star Taxes/
 ### Updating Business Information
 
 #### Contact Details
+
 Edit the contact section in `index.html` (around line 900):
+
 ```html
-<p>204-2401 Eglinton Ave E<br>Toronto, ON M1K 2N8</p>
+<p>204-2401 Eglinton Ave E<br />Toronto, ON M1K 2N8</p>
 <p><a href="tel:4167503600">416-750-3600</a></p>
 <p><a href="mailto:info@maplestartaxes.com">info@maplestartaxes.com</a></p>
 ```
 
 #### Social Media Links
+
 Update social links in the footer (around line 960):
+
 ```html
 <a href="YOUR_FACEBOOK_URL" target="_blank">...</a>
 <a href="YOUR_INSTAGRAM_URL" target="_blank">...</a>
@@ -164,18 +177,21 @@ Update social links in the footer (around line 960):
 ```
 
 #### Logo
+
 Replace the logo files with your updated designs:
+
 - `maple_star_taxes_logo.svg` - Main logo
 - Update references in HTML if using different filenames
 
 ### Modifying Colors
 
 Edit CSS variables in `styles.css` (lines 25-50):
+
 ```css
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    /* ... other colors ... */
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  /* ... other colors ... */
 }
 ```
 
@@ -189,10 +205,11 @@ Edit CSS variables in `styles.css` (lines 25-50):
 ### Booking System Integration
 
 Update the booking URL in `script.js` (around line 260):
+
 ```javascript
-function openBooking(serviceType = '') {
-    const bookingURL = 'YOUR_BOOKING_SYSTEM_URL';
-    window.open(bookingURL, '_blank');
+function openBooking(serviceType = "") {
+  const bookingURL = "YOUR_BOOKING_SYSTEM_URL";
+  window.open(bookingURL, "_blank");
 }
 ```
 
@@ -210,10 +227,11 @@ The AI assistant modal is currently a placeholder. To integrate a real AI chatbo
 4. **Configure tax-specific intents** and responses
 
 Example integration:
+
 ```javascript
 function openAIChat() {
-    // Initialize your chatbot
-    window.YourChatbot.open();
+  // Initialize your chatbot
+  window.YourChatbot.open();
 }
 ```
 
@@ -222,24 +240,31 @@ function openAIChat() {
 Add Google Analytics or similar tracking:
 
 1. **Add tracking code** to `<head>` section of `index.html`:
+
 ```html
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'YOUR_GA_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "YOUR_GA_ID");
 </script>
 ```
 
 2. **Update tracking function** in `script.js`:
+
 ```javascript
 function trackEvent(category, action, label) {
-    gtag('event', action, {
-        'event_category': category,
-        'event_label': label
-    });
+  gtag("event", action, {
+    event_category: category,
+    event_label: label,
+  });
 }
 ```
 
@@ -248,24 +273,27 @@ function trackEvent(category, action, label) {
 Connect the contact form to a backend service:
 
 1. **Using EmailJS**:
+
 ```javascript
-emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-    .then(response => {
-        showNotification('Message sent successfully!', 'success');
-    });
+emailjs
+  .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+  .then((response) => {
+    showNotification("Message sent successfully!", "success");
+  });
 ```
 
 2. **Using custom API**:
+
 ```javascript
-fetch('/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData)
+fetch("/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
 })
-.then(response => response.json())
-.then(data => {
-    showNotification('Thank you! We will contact you soon.', 'success');
-});
+  .then((response) => response.json())
+  .then((data) => {
+    showNotification("Thank you! We will contact you soon.", "success");
+  });
 ```
 
 ---
@@ -279,6 +307,7 @@ The website is fully responsive with breakpoints at:
 - **Mobile**: < 640px (single column, mobile menu)
 
 ### Mobile Optimizations
+
 - Hamburger menu navigation
 - Stacked layouts for service cards
 - Optimized font sizes
@@ -290,6 +319,7 @@ The website is fully responsive with breakpoints at:
 ## ⚡ Performance Optimization
 
 ### Current Optimizations
+
 - **CSS-based animations** (hardware-accelerated)
 - **Lazy loading** for images
 - **Intersection Observer** for scroll animations
@@ -297,6 +327,7 @@ The website is fully responsive with breakpoints at:
 - **Optimized asset loading**
 
 ### Recommended Additional Optimizations
+
 1. **Image Optimization**:
    - Use WebP format with fallbacks
    - Implement responsive images with `srcset`
@@ -319,11 +350,13 @@ The website is fully responsive with breakpoints at:
 ## 🔒 Security Considerations
 
 ### Implemented
+
 - Input sanitization hints in form handling
 - HTTPS recommendations for production
 - Secure external link attributes (`rel="noopener"`)
 
 ### Recommendations for Production
+
 1. **SSL Certificate**: Use HTTPS for all pages
 2. **Content Security Policy**: Add CSP headers
 3. **Form Validation**: Server-side validation for all inputs
@@ -335,12 +368,14 @@ The website is fully responsive with breakpoints at:
 ## 🌐 Browser Support
 
 ### Fully Supported
+
 - Chrome/Edge (latest 2 versions)
 - Firefox (latest 2 versions)
 - Safari (latest 2 versions)
 - Opera (latest version)
 
 ### Graceful Degradation
+
 - IE 11: Basic functionality (no advanced animations)
 - Older browsers: Fallback styles with reduced features
 
@@ -349,11 +384,13 @@ The website is fully responsive with breakpoints at:
 ## 📞 Contact & Support
 
 ### Business Contact
+
 - **Address**: 204-2401 Eglinton Ave E, Toronto, ON M1K 2N8
 - **Phone**: [416-750-3600](tel:4167503600)
 - **Email**: info@maplestartaxes.com
 
 ### Website Support
+
 For technical questions about this website template, refer to the code comments or contact the development team.
 
 ---
@@ -361,10 +398,12 @@ For technical questions about this website template, refer to the code comments 
 ## 📄 License & Credits
 
 ### Design & Development
+
 - Website designed and developed for Maple Star Taxes
 - Formerly Mercury Tax - serving 10,000+ clients annually
 
 ### Third-Party Resources
+
 - **Font Awesome**: Icons (Free License)
 - **Google Fonts**: Inter & Orbitron fonts (Open Font License)
 - **Unsplash/Pexels**: Stock imagery (if used)
@@ -374,6 +413,7 @@ For technical questions about this website template, refer to the code comments 
 ## 🗺️ Roadmap
 
 ### Phase 1: Complete ✅
+
 - Modern responsive design
 - Dual-country service pages
 - Interactive features
@@ -381,12 +421,14 @@ For technical questions about this website template, refer to the code comments 
 - Booking integration
 
 ### Phase 2: In Progress 🚧
+
 - AI Tax Assistant chatbot
 - Client portal integration
 - Blog/Resources section
 - Multi-language support (French/English)
 
 ### Phase 3: Planned 📋
+
 - Tax calculator tools
 - Document upload system
 - Live chat support
@@ -411,6 +453,7 @@ To contribute improvements to this website:
 ## 📊 Version History
 
 ### Version 1.0.0 (February 2026)
+
 - Initial release
 - Rebranding from Mercury Tax to Maple Star Taxes
 - Added USA market support
@@ -425,6 +468,7 @@ To contribute improvements to this website:
 ## 🎯 SEO Optimization
 
 ### Implemented
+
 - Semantic HTML5 structure
 - Meta descriptions and keywords
 - Proper heading hierarchy (H1-H6)
@@ -433,6 +477,7 @@ To contribute improvements to this website:
 - Fast loading times
 
 ### Recommendations
+
 1. **Google My Business**: Claim and optimize listings for both countries
 2. **Local SEO**: Add structured data (Schema.org)
 3. **Content Marketing**: Regular blog posts about tax tips
@@ -444,6 +489,7 @@ To contribute improvements to this website:
 ## 💡 Tips for Maintenance
 
 ### Regular Updates
+
 - Review and update tax information seasonally
 - Add new testimonials quarterly
 - Update statistics (client count, etc.) annually
@@ -451,6 +497,7 @@ To contribute improvements to this website:
 - Check for broken links quarterly
 
 ### Seasonal Campaigns
+
 - Tax season promotions (Feb-Apr)
 - Year-end planning (Nov-Dec)
 - Small business month (May)
@@ -466,6 +513,6 @@ Thank you for choosing this modern website design for Maple Star Taxes. This pla
 
 ---
 
-*For the latest updates and support, please visit the website or contact our team directly.*
+_For the latest updates and support, please visit the website or contact our team directly._
 
 **🍁 Maple Star Taxes - Excellence in Canada & USA Tax Services 🍁**

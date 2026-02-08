@@ -9,12 +9,14 @@ Your OpenAI API key is stored securely in the `.env` file and will **NEVER** be 
 ## 🚀 Quick Start (2 Steps)
 
 ### Step 1: Install Dependencies
+
 ```bash
 cd "/Users/praveendubbaka/Documents/Maple Star Taxes"
 npm install
 ```
 
 ### Step 2: Start the Secure Server
+
 ```bash
 npm start
 ```
@@ -36,11 +38,13 @@ Your website will be available at: **http://localhost:3001**
 ## 🔧 How It Works
 
 **Before (INSECURE):**
+
 ```
 Browser → OpenAI API (key visible in JavaScript ❌)
 ```
 
 **After (SECURE):**
+
 ```
 Browser → Your Server → OpenAI API (key hidden ✅)
 ```
@@ -59,12 +63,14 @@ Browser → Your Server → OpenAI API (key hidden ✅)
 ## 🌐 Deployment Options
 
 ### Option 1: Deploy to Vercel (Recommended)
+
 1. Push code to GitHub (`.env` is automatically excluded)
 2. Connect to Vercel: https://vercel.com
 3. Add environment variable: `OPENAI_API_KEY=your-key`
 4. Deploy!
 
 ### Option 2: Deploy to Heroku
+
 ```bash
 heroku create maple-star-taxes
 heroku config:set OPENAI_API_KEY=your-key
@@ -72,6 +78,7 @@ git push heroku main
 ```
 
 ### Option 3: Deploy to Netlify + Netlify Functions
+
 - Use Netlify Functions for serverless API endpoints
 - Add API key in Netlify environment variables
 
@@ -80,6 +87,7 @@ git push heroku main
 ## 🧪 Testing
 
 **Test Backend API:**
+
 ```bash
 curl http://localhost:3001/api/health
 ```
@@ -101,6 +109,7 @@ Open browser: http://localhost:3001
 ## 🆘 Troubleshooting
 
 **Server won't start?**
+
 ```bash
 npm install
 npm start
@@ -108,11 +117,13 @@ npm start
 
 **Port already in use?**
 Change PORT in `.env` file:
+
 ```
 PORT=3002
 ```
 
 **TaxBot not responding?**
+
 - Check if server is running: `http://localhost:3001/api/health`
 - Check browser console for errors (F12)
 - Server will auto-fallback to rule-based responses

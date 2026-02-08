@@ -1,6 +1,7 @@
 # Google Gemini API Setup (100% FREE)
 
 ## Why Gemini?
+
 - ✅ **Completely FREE** - No credit card required for free tier
 - ✅ **Generous limits** - 60 requests per minute
 - ✅ **High quality** - Google's latest AI model
@@ -11,7 +12,6 @@
 ### 1. Get Your FREE Gemini API Key
 
 1. Go to **Google AI Studio**: https://makersuite.google.com/app/apikey
-   
 2. Click **"Get API Key"** or **"Create API Key"**
 
 3. Sign in with your Google account (any Gmail account works)
@@ -25,6 +25,7 @@
 1. Open the `.env` file in your project folder
 
 2. Replace `your_gemini_api_key_here` with your actual API key:
+
    ```
    GEMINI_API_KEY=AIzaSyC...your_actual_key_here
    ```
@@ -34,11 +35,13 @@
 ### 3. Restart the Server
 
 Stop the current server (Ctrl+C) and restart:
+
 ```bash
 npm start
 ```
 
 You should see:
+
 ```
 🍁 Maple Star Taxes API Server running on http://localhost:3001
 ✅ Gemini API Key configured: Yes
@@ -57,16 +60,19 @@ These limits are MORE than enough for your website!
 ## Troubleshooting
 
 ### "API key not configured" error
+
 - Make sure you replaced `your_gemini_api_key_here` with your actual key
 - Make sure there are no spaces or quotes around the key
 - Restart the server after updating `.env`
 
 ### "Failed to get AI response" error
+
 - Check your API key is correct
 - Make sure you're connected to the internet
 - Verify at https://makersuite.google.com/app/apikey that your key is active
 
 ### Rate limit exceeded
+
 - Free tier allows 60 requests/minute
 - Wait a minute and try again
 - Consider caching responses for common questions
