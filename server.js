@@ -21,15 +21,19 @@ const corsOptions = {
         // Allow requests with no origin (like mobile apps, Postman, etc.)
         if (!origin) return callback(null, true);
         
-        // In production, replace with your actual domain
         const allowedOrigins = [
+            // Local development
             'http://localhost:3001',
             'http://127.0.0.1:3001',
             'http://localhost:5500',
             'http://127.0.0.1:5500',
-            // Add your production domain here:
-            // 'https://maplestartaxes.com',
-            // 'https://www.maplestartaxes.com'
+            // Production domains
+            'https://maplestartaxes.com',
+            'https://www.maplestartaxes.com',
+            'http://maplestartaxes.com',
+            'http://www.maplestartaxes.com',
+            // GitHub Pages (temporary, during domain transition)
+            'https://praveendubbaka.github.io'
         ];
         
         if (allowedOrigins.includes(origin)) {
