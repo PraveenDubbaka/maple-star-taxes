@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "test": "echo \"No tests specified\" && exit 0",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --remove \"server.js\"",
     "build": "node build.js"
   },
   "keywords": [
