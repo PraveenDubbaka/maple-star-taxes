@@ -6,8 +6,7 @@
 // ========== API CONFIGURATION ==========
 // Auto-detect environment and use appropriate API URL
 const API_CONFIG = {
-    // Update this with your Render.com deployment URL after deploying
-    production: 'https://maple-star-taxes-api.onrender.com',
+    production: 'https://maple-star-taxes.onrender.com',
     development: 'http://localhost:3001'
 };
 
