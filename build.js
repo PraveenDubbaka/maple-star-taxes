@@ -14,7 +14,8 @@ const FILES_TO_COPY = [
     'maple_star_taxes_logo.svg',
     'maple_star_taxes_logo_option1.png',
     'Maple_Star_Taxes_vector_logo.svg',
-    '.nojekyll'
+    '.nojekyll',
+    'CNAME'
 ];
 
 // Clean build directory
