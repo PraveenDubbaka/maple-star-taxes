@@ -3,6 +3,24 @@
 // Animations, Interactions, and Dynamic Content
 // ========================================
 
+// ========== API CONFIGURATION ==========
+// Auto-detect environment and use appropriate API URL
+const API_CONFIG = {
+    // Update this with your Render.com deployment URL after deploying
+    production: 'https://maple-star-taxes-api.onrender.com',
+    development: 'http://localhost:3001'
+};
+
+// Automatically detect if running locally or in production
+const isLocalhost = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1' ||
+                    window.location.hostname.includes('127.0.0.1');
+
+const API_BASE_URL = isLocalhost ? API_CONFIG.development : API_CONFIG.production;
+
+console.log('🔧 Environment:', isLocalhost ? 'Development' : 'Production');
+console.log('🌐 API URL:', API_BASE_URL);
+
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', function() {
     initializeTheme();
@@ -989,7 +1007,7 @@ async function getAIResponse(question) {
         }
         
         // Call secure backend API (API key is hidden on server)
-        const response = await fetch('http://localhost:3001/api/chat', {
+        const response = await fetch(`${API_BASE_URL}/api/chat`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
