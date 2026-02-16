@@ -385,7 +385,8 @@ The website is fully responsive with breakpoints at:
 
 ### Business Contact
 
-- **Address**: 204-2401 Eglinton Ave E, Toronto, ON M1K 2N8
+- **Canada Address**: 204-2401 Eglinton Ave E, Toronto, ON M1K 2N8
+- **USA Address**: 8201 Ohio Dr #110, Plano, TX 75204
 - **Phone**: [416-750-3600](tel:4167503600)
 - **Email**: info@maplestartaxes.com
 
